@@ -26,10 +26,10 @@ jobs:
     steps:
       - name: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
-      - name: Setup Node v${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+      # - name: Setup Node v${{ matrix.node-version }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
       - uses: Vampire/setup-wsl@v2
         with:
           distribution: Ubuntu-20.04
