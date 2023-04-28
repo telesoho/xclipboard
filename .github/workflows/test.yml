@@ -27,6 +27,6 @@ jobs:
       - uses: Vampire/setup-wsl@v2
       - shell: wsl-bash {0}
         run: id
-      - run: touch 
-      - run: wslpath
+      - run: touch ./test.txt
+      - run: wslpath ./test.txt
         
