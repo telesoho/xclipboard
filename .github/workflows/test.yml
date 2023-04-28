@@ -28,5 +28,7 @@ jobs:
       - shell: wsl-bash {0}
         run: id
       - run: touch ./test.txt
+      - run: pwd
+      - run: ls
       - run: wslpath ./test.txt
         
