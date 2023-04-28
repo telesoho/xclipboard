@@ -35,7 +35,7 @@ jobs:
       - run: sudo apt install xclip -y
       - run: . linux-set-clipboard-png.sh ./telesoho_logo_80x80.png
       - run: pwd
-      - run: . linux-save-clipboard-png.sh $PWD\test.png
+      - run: . linux-save-clipboard-png.sh $PWD/test.png
       - run: ls
 
     strategy:
