@@ -33,9 +33,9 @@ jobs:
       - run: which touch
       - run: which apt
       - run: sudo apt install xclip -y
-      - run: .\set-clipboard-png.ps1 .\telesoho_logo_80x80.png
+      - run: . linux-set-clipboard-png.sh ./telesoho_logo_80x80.png
       - run: pwd
-      - run: .\save-clipboard-png.ps1 $PWD\test.png
+      - run: . linux-save-clipboard-png.sh $PWD\test.png
       - run: ls
 
     strategy:
