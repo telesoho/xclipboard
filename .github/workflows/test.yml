@@ -27,9 +27,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3   
       - uses: Vampire/setup-wsl@v2
-        with:
-          distribution: Ubuntu-20.04
       - run: which wslpath
+      - run: which pwsh
+      - run: which powershell
       - run: .\set-clipboard-png.ps1 .\telesoho_logo_80x80.png
       - run: pwd
       - run: .\save-clipboard-png.ps1 $PWD\test.png
