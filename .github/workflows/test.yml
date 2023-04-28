@@ -28,12 +28,9 @@ jobs:
           distribution: Ubuntu-20.04
       - shell: wsl-bash {0}
         run: id
-      - run: touch ./test.txt
+      - run: set-clipboard-png.ps1 .\telesoho_logo_80x80.png
       - run: pwd
-      - run: ls
-      - run: powershell /?
-      - run: pwsh /?
-      - run: wslpath ./test.txt
+      - run: save-clipboard-png.ps1 $PWD\test.png
     strategy:
       fail-fast: false
 
