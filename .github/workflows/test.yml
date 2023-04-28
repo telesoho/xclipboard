@@ -27,6 +27,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3   
       - uses: Vampire/setup-wsl@v2
+        with:
+          distribution: Ubuntu-18.04      
       - run: which wslpath
       - run: which touch
       - run: which apt
