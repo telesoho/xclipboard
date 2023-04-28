@@ -30,7 +30,7 @@ jobs:
       - run: which wslpath
       - run: which touch
       - run: which apt
-      - run: apt install xclip
+      - run: sudo apt install xclip
       - run: .\set-clipboard-png.ps1 .\telesoho_logo_80x80.png
       - run: pwd
       - run: .\save-clipboard-png.ps1 $PWD\test.png
