@@ -31,14 +31,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: Vampire/setup-wsl@v2
+        additional-packages:
+          dos2unix
+          xclip
         with:
           distribution: Ubuntu-20.04
       - run: which wslpath
       - run: which touch
       - run: ls
       - run: pwd
-      - run: npm i
-      - run: node index.cjs
+      - run: |
+          npm ci
+          node index.cjs
 
     strategy:
       fail-fast: false
