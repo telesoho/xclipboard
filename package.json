@@ -1,0 +1,14 @@
+{
+  "name": "xclipboard",
+  "version": "1.0.0",
+  "description": "Cross platform clipboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "telesoho",
+  "license": "MIT",
+  "dependencies": {
+    "is-wsl": "^2.2.0"
+  }
+}
