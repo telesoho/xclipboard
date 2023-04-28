@@ -15,18 +15,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: windows-latest
-
+  test-wsl:
+    name: "(${{ matrix.os }})"
+    if: matrix.os == 'wsl'
+    runs-on: ${{ windows-latest }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3      
       - uses: Vampire/setup-wsl@v2
-#         with:
-#           distribution: Ubuntu-20.04
+        with:
+          distribution: Ubuntu-20.04
       - shell: wsl-bash {0}
         run: id
       - run: touch ./test.txt
@@ -35,4 +34,11 @@ jobs:
       - run: powershell /?
       - run: pwsh /?
       - run: wslpath ./test.txt
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest, wsl]
+        node-version: [16.x]  # This workflow contains a single job called "build"
+
+
         
