@@ -25,10 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3      
       - uses: Vampire/setup-wsl@v2
+        with:
+          distribution: Ubuntu-20.04
       - shell: wsl-bash {0}
         run: id
       - run: touch ./test.txt
       - run: pwd
       - run: ls
+      - run: ls /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
+      - run: powershell /?
+      - run: pwsh /?
       - run: wslpath ./test.txt
         
