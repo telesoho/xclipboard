@@ -5,4 +5,4 @@ then
     echo $1
 else
     echo "no image"
-fi
+fi;
