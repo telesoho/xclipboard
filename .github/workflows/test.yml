@@ -32,13 +32,12 @@ jobs:
       - run: pwd
       - run: .\save-clipboard-png.ps1 $PWD\test.png
       - run: ls
-      - run: wslpath -w $PWD
-      - run: wslpath /?
+      - run: which wslpath
     strategy:
       fail-fast: false
 
   testos:
-    name: "(${{ matrix.os }})"
+    name: "test (${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
 
     strategy:
