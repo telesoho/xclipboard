@@ -11,4 +11,4 @@ xclip -selection clipboard -target image/png -o >$1 2>/dev/null
 echo $1
 else
 echo "no image"
-fi;
+fi
