@@ -39,11 +39,11 @@ jobs:
             dos2unix
             xclip
       - shell: wsl-bash {0}
-        run: echo ${{ steps.powershell_path.outputs.value }}
+        run: echo "${{ steps.powershell_path.outputs.value }}"
       - shell: wsl-bash {0}
         run: dos2unix *.sh
       - shell: wsl-bash {0}
-        run: . linux-set-clipboard-png.sh ./telesoho_logo_80x80.png
+        run: xclip -selection clipboard -target image/png -i ./telesoho_logo_80x80.png
       - run: 
           npm i
           node index.cjs
