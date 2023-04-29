@@ -44,10 +44,11 @@ jobs:
           sudo apt remove nodejs -y
       - shell: wsl-bash {0}
         run: |
-          sudo apt install nodejs -y
+          sudo apt install nodejs npm -y
           whereis node
           whereis npm
           node -v
+          npm -v
 #         run: |
 #           wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
 #           . install.sh
