@@ -33,17 +33,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: Vampire/setup-wsl@v2
-        with:
-          distribution: Ubuntu-20.04
-          additional-packages:
-            dos2unix
-            xclip
+#         with:
+#           distribution: Ubuntu-20.04
+#           additional-packages:
+#             dos2unix
+#             xclip
+      - run: where pwsh
+      - shell: wsl-bash {0}
+        run: whereis pwsh
+      - shell: wsl-bash {0}
+        run: whereis powershell
       - shell: wsl-bash {0}
         run: wslpath "C:\Program Files\PowerShell\7\pwsh.EXE"
       - shell: wsl-bash {0}
         run: pwd        
-      - shell: wsl-bash {0}
-        run: dos2unix *.sh
+#       - shell: wsl-bash {0}
+#         run: dos2unix *.sh
 #       - shell: wsl-bash {0}
 #         run: xclip -selection clipboard -target image/png -i ./telesoho_logo_80x80.png
       - shell: wsl-bash {0}
