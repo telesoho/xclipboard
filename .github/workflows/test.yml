@@ -47,10 +47,15 @@ jobs:
         run: pwd        
       - shell: wsl-bash {0}
         run: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -executionpolicy bypass -file set-clipboard-png.ps1 ./telesoho_logo_80x80.png
-      - shell: wsl-bash {0}
+      - id: output_png
         run: |
-          npm install
-          node ./index.cjs
+          echo "output_png=$(wslpath -m $PWD/test.png)\n" >> "$GITHUB_OUTPUT"
+      - shell: wsl-bash {0}
+        run: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -executionpolicy bypass -file save-clipboard-png.ps1 "${{steps.output_png.outputs.output_png}}"
+      - shell: wsl-bash_Ubuntu-20.04 {0}
+        run: |
+            npm install
+            node index.cjs
 
     strategy:
       fail-fast: false
