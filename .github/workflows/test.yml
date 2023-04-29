@@ -36,9 +36,14 @@ jobs:
       - uses: Vampire/setup-wsl@v2
         with:
           distribution: Ubuntu-20.04
-#           additional-packages:
-#             dos2unix
-#             xclip
+          additional-packages:
+            dos2unix
+            curl
+      - shell: wsl-bash {0}
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+          nvm ls-remote
+          nvm install v16.13.1
       - shell: wsl-bash {0}
         run: whereis powershell
       - shell: wsl-bash {0}
