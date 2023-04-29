@@ -26,7 +26,7 @@ jobs:
       - id: powershell_path
         run: echo "value=""('where /f powershell')""" >> "$GITHUB_OUTPUT"
       - id: pwsh_path
-        run: echo "value="""('where /f pwsh')""" >> "$GITHUB_OUTPUT"
+        run: echo "value=""('where /f pwsh')""" >> "$GITHUB_OUTPUT"
       - name: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
       - name: Setup Node v${{ matrix.node-version }}
