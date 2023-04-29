@@ -45,6 +45,8 @@ jobs:
       - shell: wsl-bash {0}
         run: |
           sudo apt install nodejs -y
+          whereis node
+          whereis npm
           node -v
 #         run: |
 #           wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
