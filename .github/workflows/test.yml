@@ -46,7 +46,9 @@ jobs:
         run: dos2unix *.sh
       - shell: wsl-bash {0}
         run: xclip -selection clipboard -target image/png -i ./telesoho_logo_80x80.png
-      - run: 
+      - shell: wsl-bash {0}
+        run: /mnt/c/Program Files/PowerShell/7/pwsh.EXE /?
+      - run: |
           npm install
           node ./index.cjs
 
