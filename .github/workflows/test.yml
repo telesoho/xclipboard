@@ -42,9 +42,12 @@ jobs:
       - shell: wsl-bash {0}
         run: |
           sudo apt remove nodejs -y
+      - shell: wsl-bash {0}
+        run: |
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
           nvm ls-remote
           nvm install v16.13.1
+          nvm use v16.13.1
           node -v
       - shell: wsl-bash {0}
         run: whereis powershell
