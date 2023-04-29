@@ -24,7 +24,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - id: powershell_path
-        run: echo "value="('where powershell') >> "$GITHUB_OUTPUT"
+        run: echo "value=""('where powershell')""" >> "$GITHUB_OUTPUT"
 
       - name: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
@@ -43,7 +43,7 @@ jobs:
       - shell: wsl-bash {0}
         run: dos2unix *.sh
       - shell: wsl-bash {0}
-        run: . linux-set-clipboard-png ./telesoho_logo_80x80.png
+        run: . linux-set-clipboard-png.sh ./telesoho_logo_80x80.png
       - run: 
           npm i
           node index.cjs
