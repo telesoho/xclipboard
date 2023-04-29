@@ -39,7 +39,7 @@ jobs:
             dos2unix
             xclip
       - shell: wsl-bash {0}
-        run: echo "${{ steps.powershell_path.outputs.value }}"
+        run: wslpath "C:\Program Files\PowerShell\7\pwsh.EXE"
       - shell: wsl-bash {0}
         run: pwd        
       - shell: wsl-bash {0}
@@ -47,8 +47,8 @@ jobs:
       - shell: wsl-bash {0}
         run: xclip -selection clipboard -target image/png -i ./telesoho_logo_80x80.png
       - run: 
-          npm i
-          node index.cjs
+          npm install
+          node ./index.cjs
 
     strategy:
       fail-fast: false
