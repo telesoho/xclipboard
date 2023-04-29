@@ -46,7 +46,7 @@ jobs:
       - shell: wsl-bash {0}
         run: pwd        
       - shell: wsl-bash {0}
-        run: (whereis powershell) -executionpolicy bypass -file set-clipboard-png.ps1 ./telesoho_logo_80x80.png
+        run: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -executionpolicy bypass -file set-clipboard-png.ps1 ./telesoho_logo_80x80.png
       - shell: wsl-bash {0}
         run: |
           npm install
