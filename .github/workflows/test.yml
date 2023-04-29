@@ -44,7 +44,6 @@ jobs:
           sudo apt remove nodejs -y
       - shell: wsl-bash {0}
         run: |
-          use node16
           wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
           . install.sh
           nvm ls-remote
