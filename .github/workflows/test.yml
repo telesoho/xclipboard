@@ -34,8 +34,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: Vampire/setup-wsl@v2
-#         with:
-#           distribution: Ubuntu-20.04
+        with:
+          distribution: Ubuntu-20.04
 #           additional-packages:
 #             dos2unix
 #             xclip
