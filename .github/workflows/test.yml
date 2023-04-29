@@ -41,9 +41,11 @@ jobs:
             curl
       - shell: wsl-bash {0}
         run: |
+          sudo apt remove nodejs -y
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
           nvm ls-remote
           nvm install v16.13.1
+          node -v
       - shell: wsl-bash {0}
         run: whereis powershell
       - shell: wsl-bash {0}
